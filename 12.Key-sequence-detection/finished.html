@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script type="text/javascript" src="./cornify.js"></script>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <script>
+      const press = [];
+      const secret = 'tushar';
+
+      window.addEventListener('keyup', (e) => {
+        press.push(e.key);
+        press.slice(-secret.length-1, press.length - secret.length);
+        console.log(press);
+        
+        if(press.join('').includes(secret)){
+          console.log('DING DING you found the password!');
+          cornify_add();
+        }
+        
+      });
+    </script>
+  </body>
+</html>
